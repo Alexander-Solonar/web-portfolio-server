@@ -16,8 +16,8 @@ const transporter = nodemailer.createTransport({
   port: 465,
   secure: true,
   auth: {
-    user: process.env.email,
-    pass: process.env.pass,
+    user: "my-portfolio@ukr.net",
+    pass: "iWNajcmkiKpTAo8x",
   },
 });
 
@@ -61,7 +61,7 @@ app.post("/send-email", validateData, async (req, res) => {
     const { name, telegram, email, message } = req.body;
 
     await transporter.sendMail({
-      from: process.env.email,
+      from: "my-portfolio@ukr.net",
       to: "solo991@ukr.net",
       subject: `Message from ${name}`,
       html: `<p><strong>Telegram:</strong> ${telegram}</p>
